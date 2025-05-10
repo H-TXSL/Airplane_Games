@@ -7,15 +7,20 @@ class Settings():
     def __init__(self):
         """初始化游戏的设置""" 
         # 屏幕设置
+        self.screen_info = pygame.display.Info()
         self.screen_width = 1200
         self.screen_height = 600
+        # self.screen_width = self.screen_info.current_w
+        # self.screen_height = self.screen_info.current_h
         self.bg_color = (0, 0, 0)
         
         # 飞船速度设置
         self.ship_speed_factor = 1.5
+        # 飞船数限制
+        self.ship_limit = 3
 
         # 子弹设置
-        self.bullet_speed_factor = 1.
+        self.bullet_speed_factor = 3.0
         # 子弹放大的限制数
         self.bullet_count = 10
         # 设置初始子弹缩放大小
@@ -24,6 +29,14 @@ class Settings():
         self.bullet_scale_count = 50
         # 限制子弹数量
         self.bullets_allowed = 3
+
+        # 外星人设置
+        self.alien_speed_factor = 0.5
+        # fleet_drop_speed表示外星人撞到屏幕边缘时向下移动的速度
+        self.fleet_drop_speed = 15
+        # fleet_direction为1表示向右移，为-1表示向左移
+        self.fleet_direction = 1
+        
     
 # 图像路径设置
 # 保证在不同的操作系统中都能正确地访问图像文件

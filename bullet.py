@@ -17,10 +17,10 @@ class Bullet(Sprite):
         # 子弹图像路径
         bullet_dir = os.path.join(images_dir, "bullets")
         # 加载子弹图像并转换为Surface对象
-        bullet_pre = [f for f in os.listdir(bullet_dir) if int(os.path.splitext(f)[0][-1]) < 9]
-        bullet_pre.sort()
+        bullets = [f for f in os.listdir(bullet_dir) if int(os.path.splitext(f)[0][-1]) < 9]
+        bullets.sort()
         self.images = []
-        for bullet in bullet_pre:
+        for bullet in bullets:
             self.images.append(load_image(bullet, None, 0.25, bullet_dir))
         
         # 加载子弹图像并获取其外接矩形

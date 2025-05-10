@@ -15,16 +15,16 @@ class Ship():
 
         # 将每艘新飞船放在屏幕底部中央
         # 飞船中心的x坐标
-        self.rect.centerx = self.screen_rect.centerx
+        self.centerX = float(self.screen_rect.centerx)
+        self.rect.centerx = self.centerX
         # 飞船的截断Y轴高
         self.rect_heightY = (self.rect.height / 16 * 2)
+        self.centerY = float(self.screen_rect.bottom - (self.rect.height / 2) + self.rect_heightY)
         # 飞船中心的y坐标
-        self.rect.centery = self.screen_rect.bottom - (self.rect.height / 2) + self.rect_heightY
+        self.rect.centery = self.centerY
+        # 飞船初始位置
+        self.center_ship_xy = (self.centerX, self.centerY)
 
-
-        # 在飞船的属性center中存储小数值
-        self.centerX = float(self.rect.centerx)
-        self.centerY = float(self.rect.centery)
 
         # 移动标志
         self.moving_right = False
@@ -54,3 +54,10 @@ class Ship():
     def blitme(self):
         """在指定位置绘制飞船""" 
         self.screen.blit(self.image,self.rect) 
+
+    def center_ship(self):
+        """让飞船在屏幕上居中"""
+        self.centerX = self.center_ship_xy[0]
+        self.centerY = self.center_ship_xy[1]
+        self.rect.centerx = self.centerX
+        self.rect.centery = self.centerY
