@@ -30,13 +30,22 @@ class Settings():
         # 限制子弹数量
         self.bullets_allowed = 3
 
+        # 蛇的速度
+        self.snake_speed_factor = 1.0
+
         # 外星人设置
         self.alien_speed_factor = 0.5
         # fleet_drop_speed表示外星人撞到屏幕边缘时向下移动的速度
         self.fleet_drop_speed = 15
         # fleet_direction为1表示向右移，为-1表示向左移
         self.fleet_direction = 1
-        
+
+        self.initialize_dynamic_settings()
+
+
+    def initialize_dynamic_settings(self):
+        # 得分
+        self.alien_points = 100
     
 # 图像路径设置
 # 保证在不同的操作系统中都能正确地访问图像文件

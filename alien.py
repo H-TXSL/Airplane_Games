@@ -5,7 +5,7 @@ import random
 from pygame.sprite import Sprite
 from settings import images_dir, load_image
 
-def alien_sort(filename):
+def file_sort(filename):
     return int(filename[13:-4])
 
 class Alien(Sprite):
@@ -21,7 +21,7 @@ class Alien(Sprite):
         alien_dir = os.path.join(images_dir, "alien")
         # 图像Surface对象
         aliens = [f for f in os.listdir(alien_dir) if os.path.splitext(f)[1] == ".png"]
-        aliens.sort(key=alien_sort)
+        aliens.sort(key=file_sort)
         self.images = []
         for alien in aliens:
             self.images.append(load_image(alien, None, 0.5, alien_dir))
