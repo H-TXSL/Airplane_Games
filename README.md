@@ -37,14 +37,12 @@ pip install pygame
 
 ```
 .
-├── main.py                # 游戏主入口
 ├── game_functions.py      # 游戏核心逻辑
 ├── bullet.py              # 子弹模块
 ├── alien.py               # 外星人模块
 ├── snake.py               # 蛇模块
 ├── README.md              # 项目说明文件
-├── requirements.txt       # 依赖列表
-└── ...                    # 其它资源文件
+└── ...                    # 其它文件
 ```
 
 ## 创新亮点
